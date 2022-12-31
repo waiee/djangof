@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 
 class Item(models.Model):
     item_id = models.CharField(primary_key=True, max_length=10)
-    vendor_id = models.ForeignKey(User, default=None, max_length=10, on_delete=models.CASCADE)
+    vendor_id = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
     item_name = models.TextField()
     # item_description = models.TextField(null=True,default=None, blank=True)
     def __str__(self):
