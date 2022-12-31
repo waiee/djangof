@@ -10,14 +10,8 @@ from django.contrib.auth.models import User
 
 class Item(models.Model):
     item_id = models.CharField(primary_key=True, max_length=10)
+    vendor_id = models.CharField(foreign_key=True, max_length=10)
     item_name = models.TextField()
     item_description = models.TextField(null=True,default=None, blank=True)
     def __str__(self):
         return str(self.item_id)
-
-# class Quotation(models.Model):
-#     q_id = models.CharField(primary_key=True, max_length=10)
-#     q_name = models.TextField()
-#     q_description = models.TextField(null=True,default=None, blank=True)
-#     def __str__(self):
-#         return str(self.item_id)
