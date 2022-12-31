@@ -20,8 +20,8 @@ class Item(models.Model):
     vendor_id = models.ForeignKey(Vendor,default=None, on_delete=models.CASCADE)
     item_name = models.CharField(max_length=100)
     item_name =  models.CharField(max_length=100)
-    item_quantity =  models.BigIntegerField()
-    item_price = models.BigIntegerField()
+    item_quantity =  models.BigIntegerField(default=None)
+    item_price = models.BigIntegerField(default=None)
 
     # item_description = models.TextField(null=True,default=None, blank=True)
     def __str__(self):
