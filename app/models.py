@@ -13,8 +13,7 @@ class Vendor(models.Model):
     vendor_name = models.CharField(max_length=100)
     vendor_address = models.CharField(max_length=200)
     vendor_contact = models.BigIntegerField()
-
-    # item_description = models.TextField(null=True,default=None, blank=True)
+    
     def __str__(self):
         return str(self.item_id)
 
