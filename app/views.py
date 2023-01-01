@@ -6,6 +6,7 @@ from django.template import RequestContext
 from datetime import datetime
 
 from django.contrib.auth.decorators import login_required
+from .forms import QuotationForm
 
 def home(request):
     """Renders the home page."""
