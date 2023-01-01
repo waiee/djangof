@@ -6,6 +6,13 @@ from django.db import models
 from django.contrib.auth.models import User
 
 #sharing entity
+class Staff(models.Model):
+    staff_id = models.CharField(primary_key=True, max_length=10)
+    staff_password = models.CharField(max_length=5)
+
+    def __str__(self):
+        return str(self.staff_id)
+
 class Vendor(models.Model):
     vendor_id = models.CharField(primary_key=True, max_length=10)
     vendor_name = models.CharField(max_length=100)
