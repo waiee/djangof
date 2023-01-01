@@ -60,4 +60,4 @@ class Quotation(models.Model):
 
     # item_description = models.TextField(null=True,default=None, blank=True)
     def __str__(self):
-        return str(self.product_id)
+        return str(self.quotation_id)
