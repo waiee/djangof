@@ -32,3 +32,14 @@ class Item(models.Model):
     # item_description = models.TextField(null=True,default=None, blank=True)
     def __str__(self):
         return str(self.item_id)
+
+class Product(models.Model):
+    product_id = models.CharField(primary_key=True, max_length=10)
+    vendor_id = models.ForeignKey(Vendor,default=None, on_delete=models.CASCADE)
+    product_name = models.CharField(max_length=40)
+    product_quantity = models.PositiveIntegerField()
+    product_price = models.DecimalField(max_digits=8, decimal_places=2)
+
+    # item_description = models.TextField(null=True,default=None, blank=True)
+    def __str__(self):
+        return str(self.product_id)
