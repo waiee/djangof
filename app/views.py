@@ -64,6 +64,7 @@ def menu(request):
 
     return render(request,'app/menu.html',context)
 
+@login_required
 def create_quotation(request):
     if request.method == 'POST':
         form = QuotationForm(request.POST)
@@ -72,4 +73,4 @@ def create_quotation(request):
             return redirect('view_quotation', pk=quotation.pk)
     else:
         form = QuotationForm()
-    return render(request, 'create_quotation.html', {'form': form})
+    return render(request, 'menu.html', {'form': form})
