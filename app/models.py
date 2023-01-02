@@ -63,7 +63,7 @@ class Quotation(models.Model):
         return str(self.quotation_id)
 
 class PurchaseOrder(models.Model):
-    purchaseorder_id = models.CharField(primary_key=True, max_length=10)
+    po_id = models.CharField(primary_key=True, max_length=10)
     item_id = models.ForeignKey(Item,default=None, on_delete=models.CASCADE)
     staff_id = models.ForeignKey(Staff,default=None, on_delete=models.CASCADE)
     quotation_id = models.ForeignKey(Quotation,default=None, on_delete=models.CASCADE)
@@ -73,8 +73,8 @@ class PurchaseOrder(models.Model):
     item_price = models.DecimalField(max_digits=8, decimal_places=2)
     total_price = models.DecimalField(max_digits=8, decimal_places=2)
     quantity_needed = models.PositiveIntegerField()
-    purchaseorder_status = models.CharField(max_length=20)
+    po_status = models.CharField(max_length=20)
 
     # item_description = models.TextField(null=True,default=None, blank=True)
     def __str__(self):
-        return str(self.purchaseorder_id)
+        return str(self.po_id)
