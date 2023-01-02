@@ -33,5 +33,4 @@ urlpatterns = [
         LogoutView.as_view(template_name = 'app/index.html'),
         name='logout'),
     re_path(r'^menu$', views.menu, name='menu'),
-    path('create/', views.create_quotation)
 ]

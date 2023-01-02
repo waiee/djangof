@@ -63,14 +63,3 @@ def menu(request):
     context['user'] = request.user
 
     return render(request,'app/menu.html',context)
-
-@login_required
-def create_quotation(request):
-    if request.method == 'POST':
-        form = QuotationForm(request.POST)
-        if form.is_valid():
-            quotation = form.save()
-            return redirect('view_quotation', pk=quotation.pk)
-    else:
-        form = QuotationForm()
-    return render(request, 'app/create_quotation.html', {'form': form})
