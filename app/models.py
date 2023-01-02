@@ -67,9 +67,8 @@ class PurchaseOrder(models.Model):
     item_id = models.ForeignKey(Item,default=None, on_delete=models.CASCADE)
     staff_id = models.ForeignKey(Staff,default=None, on_delete=models.CASCADE)
     quotation_id = models.ForeignKey(Quotation,default=None, on_delete=models.CASCADE)
-    
-    product_id = models.ForeignKey(Product,default=None, on_delete=models.CASCADE)
     vendor_id = models.ForeignKey(Vendor,default=None, on_delete=models.CASCADE)
+    product_id = models.ForeignKey(Product,default=None, on_delete=models.CASCADE)
     product_name = models.CharField(max_length=40)
     product_price = models.DecimalField(max_digits=8, decimal_places=2)
     total_price = models.DecimalField(max_digits=8, decimal_places=2)
