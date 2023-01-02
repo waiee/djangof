@@ -73,4 +73,4 @@ def create_quotation(request):
             return redirect('view_quotation', pk=quotation.pk)
     else:
         form = QuotationForm()
-    return render(request, 'create_quotation.html', {'form': form})
+    return render(request, 'app/create_quotation.html', {'form': form})
