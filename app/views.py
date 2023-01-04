@@ -6,7 +6,6 @@ from django.template import RequestContext
 from datetime import datetime
 
 from django.contrib.auth.decorators import login_required
-from .forms import QuotationForm
 
 def home(request):
     """Renders the home page."""
@@ -52,12 +51,10 @@ def about(request):
 @login_required
 def menu(request):
     check_employee = request.user.groups.filter(name='employee').exists()
-    check_manager = request.user.groups.filter(name='manager').exists()
 
     context = {
             'title':'Main Menu',
             'is_employee': check_employee,
-            'is_manager': check_manager,
             'year':datetime.now().year,
         }
     context['user'] = request.user
